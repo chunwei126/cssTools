@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .wrap{
+  max-width: 1000px;
+  margin: 0 auto;
+  }
+  .menu{
+    display: flex;
+    justify-content: space-between;
+  }
+  .menu li{
+    padding: 14px 0;
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: rgb(195, 233, 145);
+    border: 1px solid black;
+    margin: 0 0 0 -1px;
+
+  }
+  .menu li a{
+    font-size: 22px;
+    text-decoration: none;
+    color: black;
+  }
+  .menu .menu_item:hover,
+  .menu .menu_item:active{
+    background-color: yellow;
+  }
+
+  /*menu閃光特效 start*/
+  .menu .flash{
+    position: relative;
+    overflow: hidden;
+    background-color: #e6afafcc;
+  }
+  .menu .flash:before {
+    content: "";
+    background-color: rgba(255, 255, 255, 0.5);
+    /* opacity: 0; */
+    height: 100%;
+    width: 3em;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -4.5em;
+    -webkit-transform: skewX(-45deg) translateX(0);
+    transform: skewX(-45deg) translateX(0);
+    -webkit-transition: none;
+    transition: none;
+    animation: flash 1s infinite;
+  }
+  @keyframes flash{
+    100%{
+      /* -webkit-transform: skewX(-45deg) translateX(13.5em);
+      transform: skewX(-45deg) translateX(13.5em); */
+      -webkit-transform: skewX(-45deg) translateX(20em);
+      transform: skewX(-45deg) translateX(20em);
+      -webkit-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
+    }
+  }
+  /*menu閃光特效 end*/
+</style>
+<body>
+  <div class="wrap">
+    <nav>
+      <ul class="menu">
+        <li class="menu_item"><a href="">logo</a></li>
+        <li class="menu_item"><a href="">風格特色</a></li>
+        <li class="menu_item"><a href="">家具介紹</a></li>
+        <li class="menu_item"><a href="">好評見證</a></li>
+        <li class="flash"><a href="">立即訂購</a></li>
+      </ul>
+    </nav>
+  </div>
+</body>
+</html>

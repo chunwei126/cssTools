@@ -1,0 +1,27 @@
+.flash{
+  position: relative;
+  overflow: hidden;
+}
+.flash:before {
+  content: "";
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 100%;
+  width: 3em;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -4.5em;
+  -webkit-transform: skewX(-45deg) translateX(0);
+  transform: skewX(-45deg) translateX(0);
+  -webkit-transition: none;
+  transition: none;
+  animation: flash 1s infinite;
+}
+@keyframes flash{
+  100%{
+    -webkit-transform: skewX(-45deg) translateX(20em);
+    transform: skewX(-45deg) translateX(20em);
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+}
